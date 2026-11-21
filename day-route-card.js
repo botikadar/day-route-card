@@ -245,7 +245,7 @@ class DayRouteCard extends HTMLElement {
     $("today").addEventListener("click", () => { this._day = isoDay(new Date()); this._load(); });
     $("slide").addEventListener("input", (e) => this._scrub(+e.target.value));
     const L = await loadLeaflet();
-    this._map = L.map($("map"), { zoomControl: true, attributionControl: true }).setView([46.77, 23.59], 12);
+    this._map = L.map($("map"), { zoomControl: true, attributionControl: true }).setView([20, 0], 2);
     // Esri World Street Map: no API key and no Referer needed. (CARTO now wants an API key, and
     // OpenStreetMap answers 403 because Home Assistant pages send no Referer.) Override with tile_url.
     L.tileLayer(this._config.tile_url || "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
